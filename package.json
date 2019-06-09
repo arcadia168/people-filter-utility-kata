@@ -1,0 +1,18 @@
+{
+  "name": "people-filter",
+  "version": "1.0.0",
+  "description": "A small exercise to create a filter for an array of objects representing people.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "kata",
+    "javascript"
+  ],
+  "author": "***REMOVED*** ***REMOVED***",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
