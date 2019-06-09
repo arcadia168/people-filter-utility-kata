@@ -17,9 +17,12 @@ module.exports = (peopleToFilter, customRules) => {
         throw new Error('Please supply a valid list of people objects.');
     }
 
+    const defaultRule = 'personToFilter.age >= 30 && personToFilter.age <= 40';
     let rulesToUse = [];
     if (!customRules) {
-        rulesToUse.push('personToFilter.age >= 30 && personToFilter.age <= 40');
+        rulesToUse.push(defaultRule);
+    } else {
+        rulesToUse = rulesToUse.concat(customRules);
     }
 
     const filteredPeopleGroupedByGender = {};

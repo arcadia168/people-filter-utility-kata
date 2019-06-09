@@ -71,7 +71,11 @@ describe('People Filter Utility', () => {
 
         describe('Takes a set of custom rules used to filter people', () => {
             it('Uses the custom rules passed in', () => {
-
+                const customRules = [];
+                customRules.push('personToFilter.age >= 20 && personToFilter.age < 30');
+                const youngPeople = peopleFilter(testPeopleToFilter, customRules);
+                console.log(`youngPeople is: ${JSON.stringify(youngPeople)}`);
+                expect(youngPeople['Male'].length).toBe(1);
             });
         });
     });
