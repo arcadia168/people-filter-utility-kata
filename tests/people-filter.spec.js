@@ -32,6 +32,11 @@ const testPeopleToFilter = [
         name: 'Dave',
         age: 25,
         gender: 'Male',
+    },
+    {
+        name: 'Varys',
+        age: 39,
+        gender: 'Non-binary'
     }
 ]
 describe('People Filter Utility', () => {
@@ -56,6 +61,11 @@ describe('People Filter Utility', () => {
             it('Returns the female gendered people between the age of 30 and 40', () => {
                 const filteredPeople = peopleFilter(testPeopleToFilter);
                 expect(filteredPeople['Female'].length).toBe(3);
+            });
+
+            it('Returns the non-binary gendered people between the age of 30 and 40', () => {
+                const filteredPeople = peopleFilter(testPeopleToFilter);
+                expect(filteredPeople['Non-binary'].length).toBe(1);
             });
         })
     });
