@@ -48,9 +48,14 @@ describe('People Filter Utility', () => {
 
     describe('When a valid array of people objects is passed in', () => {
         describe('When filtering using the default rules', () => {
-            it('Returns male gender people between the age of 30 and 40', () => {
+            it('Returns male gendered people between the age of 30 and 40', () => {
                 const filteredPeople = peopleFilter(testPeopleToFilter);
                 expect(filteredPeople['Male'].length).toBe(2);
+            });
+
+            it('Returns the female gendered people between the age of 30 and 40', () => {
+                const filteredPeople = peopleFilter(testPeopleToFilter);
+                expect(filteredPeople['Female'].length).toBe(3);
             });
         })
     });
