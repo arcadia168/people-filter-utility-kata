@@ -8,7 +8,7 @@ Here's an example:
 
 ``` javascript
 const peopleFilter = require('../src/people-filter');
-const youngMalePeople = [
+const youngerMalePeople = [
     {
         name: 'Dave',
         age: 25,
@@ -29,11 +29,17 @@ const olderMalePeople = [
 ]
 const malePeople = [
     ...olderMalePeople,
-    ...youngMalePeople,
+    ...youngerMalePeople,
 ];
 
-const filteredPeopleDefaultRules = peopleFilter(testPeopleToFilter);
+const filteredPeopleDefaultRules = peopleFilter(malePeople);
+
+console.log(JSON.stringify(filteredPeopleDefaultRules));
+// Will be the 'olderMalePeople' array
 
 const customRules = ['personToFilter.age >= 20 && personToFilter.age < 30'];
-const youngPeople = peopleFilter(testPeopleToFilter, customRules);
+const youngerPeople = peopleFilter(testPeopleToFilter, customRules);
+
+console.log(JSON.stringify(youngerPeople));
+// Will be the 'youngerMalePeople' array
 ```

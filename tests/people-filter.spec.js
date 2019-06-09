@@ -2,7 +2,7 @@
 // containing name+age+gender, returning everyone between 30 and 40 years old grouped by gender.
 // Keep it simple but reusable. Create a secret gist (https://gist.github.com/) and paste the URL below.
 const peopleFilter = require('../src/people-filter');
-const youngMalePeople = [
+const youngerMalePeople = [
     {
         name: 'Dave',
         age: 25,
@@ -23,7 +23,7 @@ const olderMalePeople = [
 ]
 const malePeople = [
     ...olderMalePeople,
-    ...youngMalePeople,
+    ...youngerMalePeople,
 ];
 const femalePeople = [
     {
@@ -88,8 +88,8 @@ describe('People Filter Utility', () => {
             it('Uses the custom rules passed in', () => {
                 const customRules = [];
                 customRules.push('personToFilter.age >= 20 && personToFilter.age < 30');
-                const youngPeople = peopleFilter(testPeopleToFilter, customRules);
-                expect(youngPeople['Male']).toEqual(youngMalePeople);
+                const youngerPeople = peopleFilter(testPeopleToFilter, customRules);
+                expect(youngerPeople['Male']).toEqual(youngerMalePeople);
             });
         });
     });
