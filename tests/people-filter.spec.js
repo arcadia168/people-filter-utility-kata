@@ -67,6 +67,12 @@ describe('People Filter Utility', () => {
                 const filteredPeople = peopleFilter(testPeopleToFilter);
                 expect(filteredPeople['Non-binary'].length).toBe(1);
             });
-        })
+        });
+
+        describe('Takes a set of custom rules used to filter people', () => {
+            it('Uses the custom rules passed in', () => {
+
+            });
+        });
     });
 });
